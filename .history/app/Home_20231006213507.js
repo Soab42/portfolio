@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-sync-scripts */
 "use client";
-
 import Nav from "@/components/Nav";
-import "../public/assets/css/meyawo.css";
 import { useEffect, useState } from "react";
 import Heaader from "@/components/Heaader";
 import About from "@/components/About";

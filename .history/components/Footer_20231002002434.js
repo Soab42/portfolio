@@ -23,7 +23,7 @@ export default function Footer() {
       <footer className="footer ">
         <p className="mb-0">
           Copyright {new Date().getFullYear()}
-          &copy;SYFUDDHIN
+          &copy;SOAB
         </p>
         <div className="social-links text-right m-auto ml-sm-auto">
           <a href="#" className="link">

@@ -3,7 +3,16 @@
 
 import Nav from "@/components/Nav";
 import "../public/assets/css/meyawo.css";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import {
+  TiMail,
+  TiSocialFacebook,
+  TiSocialGithub,
+  TiSocialInstagram,
+  TiSocialLinkedin,
+} from "react-icons/ti";
 import Heaader from "@/components/Heaader";
 import About from "@/components/About";
 import Service from "@/components/Service";

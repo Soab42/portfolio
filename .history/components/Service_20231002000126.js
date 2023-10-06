@@ -39,10 +39,10 @@ export default function Service() {
                   className="icon"
                 />
 
-                <h5 className="title">Cross Application</h5>
+                <h5 className="title">Sapiente</h5>
                 <p className="subtitle">
-                  I create cross-platform mobile applications using Flutter and
-                  React Native for efficient and versatile app development.
+                  Labore velit culpa adipisci excepturi consequuntur itaque in
+                  nam molestias dolorem iste quod.
                 </p>
               </div>
             </div>
@@ -57,10 +57,10 @@ export default function Service() {
                   alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
                   className="icon"
                 />
-                <h5 className="title">Backend</h5>
+                <h5 className="title">Placeat</h5>
                 <p className="subtitle">
-                  Offering backend development services, I create efficient,
-                  secure, and scalable solutions for your applications.
+                  Labore velit culpa adipisci excepturi consequuntur itaque in
+                  nam molestias dolorem iste quod.
                 </p>
               </div>
             </div>
@@ -75,10 +75,10 @@ export default function Service() {
                   alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
                   className="icon"
                 />
-                <h5 className="title">Web Scrapping</h5>
+                <h5 className="title">Iusto</h5>
                 <p className="subtitle">
-                  I provide web scraping services, extracting data from websites
-                  ensuring accurate and ethical data retrieval.
+                  Labore velit culpa adipisci excepturi consequuntur itaque in
+                  nam molestias dolorem iste quod.
                 </p>
               </div>
             </div>

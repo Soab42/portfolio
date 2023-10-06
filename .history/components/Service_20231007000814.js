@@ -60,7 +60,8 @@ export default function Service() {
                 <h5 className="title">Backend</h5>
                 <p className="subtitle">
                   Offering backend development services, I create efficient,
-                  secure, and scalable solutions for your applications.
+                  secure, and scalable server-side solutions for your
+                  applications.
                 </p>
               </div>
             </div>

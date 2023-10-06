@@ -59,8 +59,8 @@ export default function Service() {
                 />
                 <h5 className="title">Backend</h5>
                 <p className="subtitle">
-                  Offering backend development services, I create efficient,
-                  secure, and scalable solutions for your applications.
+                  PHP and Laravel expertise for robust backend development
+                  ensuring seamless functionality and performance.
                 </p>
               </div>
             </div>
@@ -78,7 +78,8 @@ export default function Service() {
                 <h5 className="title">Web Scrapping</h5>
                 <p className="subtitle">
                   I provide web scraping services, extracting data from websites
-                  ensuring accurate and ethical data retrieval.
+                  for analysis, research, and automation, ensuring accurate and
+                  ethical data retrieval.
                 </p>
               </div>
             </div>
