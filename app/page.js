@@ -1,91 +1,84 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+/* eslint-disable @next/next/no-sync-scripts */
+"use client";
 
-const inter = Inter({ subsets: ['latin'] })
+import Nav from "@/components/Nav";
+import "../public/assets/css/meyawo.css";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import {
+  TiMail,
+  TiSocialFacebook,
+  TiSocialGithub,
+  TiSocialInstagram,
+  TiSocialLinkedin,
+} from "react-icons/ti";
+import Heaader from "@/components/Heaader";
+import About from "@/components/About";
+import Service from "@/components/Service";
+import Portfolio from "@/components/Portfolio";
+import Pricing from "@/components/Pricing";
+import Testmonial from "@/components/Testmonial";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import Blog from "@/components/Blog";
+import Hire from "@/components/Hire";
 
 export default function Home() {
+  // Function to update scroll position
+  const [scroll, setScroll] = useState(false);
+  const updateScrollPosition = () => {
+    const currentPosition =
+      window.pageYOffset || document.documentElement.scrollTop;
+    if (currentPosition >= 600) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+  // Add scroll event listener on component mount
+  useEffect(() => {
+    window.addEventListener("scroll", updateScrollPosition);
+    return () => {
+      // Clean up the event listener on component unmount
+      window.removeEventListener("scroll", updateScrollPosition);
+    };
+  }, []);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <body>
+      {/* <!-- Page Navbar --> */}
+      <Nav scroll={scroll} />
+      {/* <!-- End of Page Navbar --> */}
+      {/* <!-- page header --> */}
+      <Heaader />
+      {/* <!-- end of page header --> */}
+      {/* <!-- about section --> */}
+      <About />
+      {/* <!-- end of about section --> */}
+      {/* <!-- service section --> */}
+      <Service />
+      {/* <!-- end of service section --> */}
+      {/* <!-- portfolio section --> */}
+      <Portfolio />
+      {/* <!-- end of portfolio section --> */}
+      {/* <!-- pricing section --> */}
+      <Pricing />
+      {/* <!-- end of pricing section --> */}
+      {/* <!-- section --> */}
+      <Hire />
+      {/* <!-- end of section --> */}
+      {/* <!-- testimonial section --> */}
+      <Testmonial />
+      {/* <!-- end of testimonial section --> */}
+      {/* <!-- blog section --> */}
+      <Blog />
+      {/* <!-- end of blog section --> */}
+      {/* <!-- contact section --> */}
+      <Contact />
+      {/* <!-- end of contact section --> */}
+      {/* <!-- footer --> */}
+      <Footer />
+    </body>
+  );
 }
