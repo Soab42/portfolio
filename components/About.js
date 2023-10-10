@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function About() {
@@ -42,9 +43,12 @@ export default function About() {
                 <hr />
               </span>
             </div>
-            <button className="btn-rounded btn btn-outline-primary mt-4">
+            <Link
+              href="/assets/pdf/soab_Mahmud_Syfuddhin.pdf"
+              className="btn-rounded btn btn-outline-primary mt-4"
+            >
               Download CV
-            </button>
+            </Link>
           </div>
         </div>
         {/* <!-- end of about wrapper --> */}

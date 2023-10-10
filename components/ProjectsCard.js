@@ -1,31 +1,30 @@
 import Image from "next/image";
 import Modal from "./Modal";
 import { useState } from "react";
+import Slider from "./Slider";
 
 export default function ProjectsCard({ project }) {
-  const { imgLink, title, category, link, github } = project;
+  const { imgLink, title, category, link, github, previewImages } = project;
   const [open, setOpen] = useState(false);
 
   return (
     <div className="col-md-4">
       <Modal open={open} setOpen={setOpen}>
-        <span className="portfolio-card-caption">
-          <h4>{title}</h4>
-          <p className="font-weight-normal">Category: {category}</p>
-        </span>
+        <Slider data={previewImages} />
       </Modal>
       <div className="portfolio-card">
         <Image
-          width={450}
-          height={350}
+          width={500}
+          height={250}
           src={imgLink}
           className="portfolio-card-img"
           alt="Loan Calculator"
         />
+
         <span className="portfolio-card-overlay">
           <span className="portfolio-card-caption">
             <h4>{title}</h4>
-            <p className="font-weight-normal">Category: {category}</p>
+            <p className="font-weight-normal">{category}</p>
           </span>
           <span
             style={{

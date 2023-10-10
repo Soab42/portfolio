@@ -1,33 +1,47 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { MdClose } from "react-icons/md";
 
 export default function Modal({ children, open, setOpen }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setIsOpen(open);
+    // Restore scrolling
   }, [open]);
-  const closeModal = () => {
+  const closeModal = (e) => {
     setOpen(!open);
     setIsOpen(!open);
-    document.body.style.overflow = "auto"; // Restore scrolling
   };
+  const some = (e) => {};
   return (
-    <div className={"modal"} style={{ display: `${isOpen ? "flex" : "none"}` }}>
-      <div className="modal-content">
+    <div
+      className={"modal"}
+      style={{ display: `${isOpen ? "flex" : "none"}` }}
+      onClick={closeModal}
+    >
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button
           className="close"
           onClick={closeModal}
           style={{
             all: "unset",
-            display: "block",
-            float: "right",
+            display: "flex",
+            position: "absolute",
             cursor: "pointer",
+            top: -22,
+            right: -22,
+            padding: "5px 5px",
+            background: "rgba(0,0,0,0.2)",
+            borderRadius: "5rem",
+            borderBottomLeftRadius: "0",
+            zIndex: 100,
+            fontSize: "20px",
           }}
         >
-          &times;
+          <MdClose />
         </button>
-        {children}
+        <div>{children}</div>
       </div>
     </div>
   );

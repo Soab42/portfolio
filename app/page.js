@@ -55,7 +55,7 @@ export default function Home() {
       <Portfolio />
       {/* <!-- end of portfolio section --> */}
       {/* <!-- pricing section --> */}
-      <Pricing />
+      {/* <Pricing /> */}
       {/* <!-- end of pricing section --> */}
       {/* <!-- section --> */}
       <Hire />

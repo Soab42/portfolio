@@ -3,8 +3,7 @@ export async function GET(request) {
   const requestJson = {
     method: request.method,
     url: request.url,
-    ip: request.ip,
-    geo: request.geo,
+
     headers: Object.fromEntries(request.headers),
     ipAddress:
       request.headers.get("x-forwarded-for") ||

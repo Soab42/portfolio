@@ -26,23 +26,31 @@ export default function Footer() {
           &copy;SYFUDDHIN
         </p>
         <div className="social-links text-right m-auto ml-sm-auto">
-          <a href="#" className="link">
+          <a href="https://fb.com/syfuddhin" className="link" target="_blank">
             <FaFacebookF />
           </a>
-          <a href="#" className="link">
+          <a href="mailto:syfuddhin@gmail.com" className="link" target="_blank">
             <FaGoogle />
           </a>
-          <a href="#" className="link">
+          <a
+            href="https://www.instagram.com/syfuddhin"
+            className="link"
+            target="_blank"
+          >
             <FaInstagram />
           </a>
 
-          <a href="#" className="link">
+          <a href="https://github.com/soab42" className="link" target="_blank">
             <FaGithub />
           </a>
-          <a href="#" className="link">
+          <a
+            href="https://www.linkedin.com/in/soab-mahmud-4a202787"
+            className="link"
+            target="_blank"
+          >
             <FaLinkedinIn />
           </a>
-          <a href="#" className="link">
+          <a href="https://wa.me/1644556543" className="link" target="_blank">
             <FaWhatsapp />
           </a>
         </div>
