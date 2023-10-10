@@ -1,24 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Modal({ children, open }) {
+export default function Modal({ children, open, setOpen }) {
   const [isOpen, setIsOpen] = useState(false);
-  console.log("open" + open());
+
+  useEffect(() => {
+    setIsOpen(open);
+  }, [open]);
   const closeModal = () => {
-    setIsOpen(false);
-    console.log(isOpen);
-    // document.body.style.overflow = "auto"; // Restore scrolling
+    setOpen(!open);
+    setIsOpen(!open);
+    document.body.style.overflow = "auto"; // Restore scrolling
   };
   return (
-    <div className={"modal"}>
+    <div className={"modal"} style={{ display: `${isOpen ? "flex" : "none"}` }}>
       <div className="modal-content">
-        <butto
+        <button
           className="close"
           onClick={closeModal}
-          style={{ display: "flex", justifyContent: "right" }}
+          style={{
+            all: "unset",
+            display: "block",
+            float: "right",
+            cursor: "pointer",
+          }}
         >
           &times;
-        </butto>
+        </button>
         {children}
       </div>
     </div>
