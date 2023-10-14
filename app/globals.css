@@ -167,17 +167,19 @@ a {
 .portion-circle {
   display: flex;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 2.6em;
 }
 .portion {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   background-color: #c2e74b;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   /* border: 1px solid rgba(80, 189, 149, 0.241); */
   position: relative;
   display: flex;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   justify-content: center;
+  /* padding-top: 3rem; */
   align-items: center;
   filter: drop-shadow(2px 2px 5px rgb(var(--background-end-rgb)));
   /* box-shadow: 2px 2px 10px rgb(var(--background-end-rgb)); */
@@ -193,44 +195,58 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 8.5px;
+  font-size: 10px;
   font-weight: bold;
 }
 .content-skill::after {
   position: absolute;
-  top: -50px;
-  left: -50px;
-  bottom: -50px;
-  right: -50px;
+  top: -65px;
+  left: -65px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  bottom: -65px;
+  right: -65px;
   content: "";
   /* border: 1px solid rgba(80, 189, 149, 0.241); */
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  /* border-radius: 50%; */
   z-index: -10;
   background: #d448f037;
+  /* padding-bottom: 2rem; */
   /* backdrop-filter: blur(10px); */
 }
 .content-skill > strong {
-  font-size: 0.71rem;
-  text-transform: lowercase;
+  font-size: 0.9rem;
+  text-transform: uppercase;
   color: rgb(228, 230, 231);
   letter-spacing: 0.2em;
+  margin-bottom: 30px;
   transition: all 300ms ease-in-out;
 }
 .content-skill > span:nth-child(1) {
-  font-size: 1.6rem;
-  color: rgb(36, 216, 240);
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: rgb(100, 168, 228);
+  filter: drop-shadow(2px 2px 0px rgba(0, 5, 9, 0.559));
 }
 .status {
-  font-size: 10px;
-  padding: 1px;
+  font-size: 13px;
+  padding: 2px;
   filter: drop-shadow(2px 2px 5px rgb(var(--background-end-rgb)));
   background-color: #ee725cbf;
   color: rgba(253, 253, 253, 0.935);
   letter-spacing: 2px;
-  border-radius: 10px;
-  rotate: -20deg;
-  transform: translate(25px, -95px);
+  /* border-radius: 10px; */
+  /* rotate: -20deg; */
+  /* transform: translate(30px, -120px); */
   box-shadow: 2px 2px 2px #1400001f;
+  clip-path: polygon(
+    0% 0%,
+    10% 50%,
+    0% 100%,
+    100% 100%,
+    90% 50%,
+    100% 0%,
+    0% 0%
+  );
 }
