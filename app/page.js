@@ -1,21 +1,20 @@
 /* eslint-disable @next/next/no-sync-scripts */
 "use client";
 
-import Nav from "@/components/Nav";
-import "../public/assets/css/meyawo.css";
-import "./globals.css";
-import { useEffect, useState } from "react";
-import Heaader from "@/components/Heaader";
 import About from "@/components/About";
-import Service from "@/components/Service";
-import Portfolio from "@/components/Portfolio";
-import Pricing from "@/components/Pricing";
-import Testmonial from "@/components/Testmonial";
+import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Blog from "@/components/Blog";
+import Heaader from "@/components/Heaader";
 import Hire from "@/components/Hire";
-import Skills from "@/components/skills";
+import Nav from "@/components/Nav";
+import Portfolio from "@/components/Portfolio";
+import Service from "@/components/Service";
+import Testmonial from "@/components/Testmonial";
+import Skills from "@/components/Skills";
+import { useEffect, useState } from "react";
+import "../public/assets/css/meyawo.css";
+import "./globals.css";
 
 export default function Home() {
   // Function to update scroll position
