@@ -24,6 +24,7 @@ export default function Slider({ data }) {
           display: "flex",
           width: "1200px",
           translate: `${-(position * 1200)}px`,
+          transition: "translate 500ms cubic-bezier(.17,.67,.95,.62)",
         }}
       >
         <div

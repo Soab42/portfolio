@@ -15,6 +15,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Blog from "@/components/Blog";
 import Hire from "@/components/Hire";
+import Skills from "@/components/skills";
 
 export default function Home() {
   // Function to update scroll position
@@ -56,6 +57,7 @@ export default function Home() {
       {/* <!-- end of portfolio section --> */}
       {/* <!-- pricing section --> */}
       {/* <Pricing /> */}
+      <Skills />
       {/* <!-- end of pricing section --> */}
       {/* <!-- section --> */}
       <Hire />
