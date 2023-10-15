@@ -20,8 +20,7 @@ export default function Home() {
   // Function to update scroll position
   const [scroll, setScroll] = useState(false);
   const updateScrollPosition = () => {
-    const currentPosition =
-      window.pageYOffset || document.documentElement.scrollTop;
+    const currentPosition = document.documentElement.scrollTop;
     if (currentPosition >= 600) {
       setScroll(true);
     } else {
@@ -30,12 +29,17 @@ export default function Home() {
   };
   // Add scroll event listener on component mount
   useEffect(() => {
-    window.addEventListener("scroll", updateScrollPosition);
+    window.addEventListener("scroll", () => {
+      updateScrollPosition();
+      revelsElement();
+    });
     return () => {
       // Clean up the event listener on component unmount
       window.removeEventListener("scroll", updateScrollPosition);
     };
   }, []);
+
+  function revelsElement() {}
 
   return (
     <body style={{ position: "relative" }}>

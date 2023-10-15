@@ -44,7 +44,7 @@ export default function About() {
               </span>
             </div>
             <Link
-              href="/assets/pdf/soab_Mahmud_Syfuddhin.pdf"
+              href="assets/pdf/soab_Mahmud_Syfuddhin.pdf"
               className="btn-rounded btn btn-outline-primary mt-4"
             >
               Download CV
