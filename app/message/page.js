@@ -25,17 +25,22 @@ export default function Page() {
 
   if (data) {
     return (
-      <div>
-        {data &&
-          data.map((singleData, i) => {
-            return (
-              <div className="messageBox" key={i}>
-                <div className="name">{singleData.name} </div>
-                <div className="email">{singleData.email}</div>
-                <div className="message">{singleData.message}</div>
-              </div>
-            );
-          })}
+      <div className="viewMessage">
+        <div className="layoutMessage">
+          {data &&
+            data.map((singleData, i) => {
+              return (
+                <div className="messageBox" key={i}>
+                  <div className="name">{singleData.name} </div>
+                  <div className="email">
+                    <span>From:</span>
+                    {singleData.email}
+                  </div>
+                  <div className="message">{singleData.message}</div>
+                </div>
+              );
+            })}
+        </div>
       </div>
     );
   }

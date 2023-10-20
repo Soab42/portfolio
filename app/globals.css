@@ -276,3 +276,60 @@ a {
   gap: 40px;
   transition: transform 1s ease-in-out;
 }
+.viewMessage {
+  background: rgb(47, 141, 153);
+  padding: 4rem;
+  height: 100vh;
+
+  overflow: hidden;
+}
+.layoutMessage {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  /* padding: 4rem; */
+  /* margin-top: 4rem; */
+  align-items: center;
+  height: 90vh;
+  justify-content: start;
+  overflow: scroll;
+  /* padding-top: 12rem; */
+}
+.messageBox {
+  background: #0071ff33;
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 02px 5px 4px rgba(0, 0, 0, 0.5);
+}
+.messageBox > .name {
+  font-size: larger;
+  font-weight: bold;
+  padding: 2px;
+  color: blanchedalmond;
+  backdrop-filter: blur(10px);
+  letter-spacing: 0.51cap;
+  position: relative;
+  border-bottom: 1px solid #01050933;
+  margin-bottom: 0.31rem;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.messageBox > .email > span {
+  /* background: rgb(106, 12, 213); */
+  padding: 2px;
+  color: rgb(63, 74, 74);
+  margin-right: 1rem;
+}
+.messageBox > .email {
+  font-size: large;
+  font-style: italic;
+  color: #403531cc;
+}
+.messageBox > .message {
+  font-size: large;
+  /* text-indent: 20px;  */
+  text-align: justify;
+  padding: 1rem;
+}
