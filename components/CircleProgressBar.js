@@ -1,52 +1,54 @@
-"use client";
 import React, { useEffect, useState } from "react";
 
 export default function CircleProgressBar(props) {
-  // console.log(props.skill);
   const [index, setIndex] = useState(0);
   const { name, skill, icon } = props.skill;
-  //   const status = 80;
+  const [status, setStatus] = useState(0);
+  const [statusColor, setStatusColor] = useState("#69cddf89");
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (index < skill) {
-        setIndex((previndex) => previndex + 1);
+        props.isVisible && setIndex((prevIndex) => prevIndex + 1);
       } else {
-        clearInterval(interval); // Stop the interval when done
+        clearInterval(interval);
       }
     }, 5);
 
     return () => {
-      clearInterval(interval); // Cleanup when the component unmounts
+      clearInterval(interval);
     };
-  }, [index, skill]);
+  }, [index, skill, props.isVisible]);
 
-  let status;
-  let statusColor;
-  switch (true) {
-    case index < 65:
-      status = "Familiar";
-      statusColor = "#69cddf89";
-      break;
-    case index < 80:
-      status = "Comfortable";
-      statusColor = "#ee725cbf";
-      break;
-    case index <= 100:
-      status = "Expert";
-      statusColor = "#590a7489";
-      break;
-    default:
-      break;
-  }
+  useEffect(() => {
+    if (index < 65) {
+      setStatus(0);
+      setStatusColor("#69cddf89");
+    } else if (index < 80) {
+      setStatus(123);
+      setStatusColor("#ee725cbf");
+    } else if (index <= 100) {
+      setStatus(240);
+      setStatusColor("#590a7489");
+    }
+  }, [index]);
 
   return (
-    <div style={{ display: "flex", color: "black", flexDirection: "column" }}>
+    <div
+      style={{
+        display: "flex",
+        color: "black",
+        flexDirection: "column",
+        transition: "all .5s",
+      }}
+    >
       <div
         className="portion"
         style={{
           background: `conic-gradient(${statusColor} ${
             index * 3.6
           }deg, transparent 0deg)`,
+          transition: "all 1s",
         }}
       >
         <div className="content-skill">
@@ -58,9 +60,20 @@ export default function CircleProgressBar(props) {
         className="status"
         style={{
           background: statusColor,
+          transition: "all 1s",
+          overflow: "hidden",
+          width: "150px",
+          paddingLeft: "45px",
         }}
       >
-        {status}
+        <div
+          className="statusSkill"
+          style={{ transform: `translateX(-${status}px)` }}
+        >
+          <div>Familiar</div>
+          <div>Comfortable</div>
+          <div>Expert</div>
+        </div>
       </span>
     </div>
   );

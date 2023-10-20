@@ -2,12 +2,11 @@
 "use client";
 // SlideInComponent.js
 import React, { useRef, useEffect, useState } from "react";
-import "../../css/slide.css";
-import Skills from "@/components/Skills";
+
 const SlideInComponent = () => {
   const slideInRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  // console.log(isVisible);
+  console.log(slideInRef);
   useEffect(() => {
     const handleScroll = () => {
       if (slideInRef.current) {
@@ -17,17 +16,17 @@ const SlideInComponent = () => {
         setIsVisible(rect.top < triggerPoint);
       }
     };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isVisible]);
+  }, []);
 
   return (
-    <div className="slider">
-      <div className="gap"></div>
-      <Skills isVisible={isVisible} slideInRef={slideInRef} />
+    <div ref={slideInRef} className={`slide-in ${isVisible ? "visible" : ""}`}>
+      Content to slide in
     </div>
   );
 };

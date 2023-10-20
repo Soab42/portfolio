@@ -40,8 +40,8 @@ export default function Nav({ scroll }) {
             </a>
           </li>
           <li className="item ml-md-3">
-            <a href="components.html" className="btn btn-primary">
-              Components
+            <a href="#skills" className="btn btn-primary">
+              Skills
             </a>
           </li>
         </ul>

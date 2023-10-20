@@ -87,13 +87,8 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: black;
+  background: white;
 }
 
 a {
@@ -222,7 +217,7 @@ a {
   color: rgb(228, 230, 231);
   letter-spacing: 0.2em;
   margin-bottom: 30px;
-  transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out 2s;
 }
 .content-skill > span:nth-child(1) {
   font-size: 3rem;
@@ -250,4 +245,34 @@ a {
     100% 0%,
     0% 0%
   );
+}
+/* SlideInComponent.css */
+.slide-in {
+  /* opacity: 0; */
+  text-align: center;
+  /* transform: translateX(10%); */
+  transition: transform 0.5s, opacity 0.5s;
+  animation: slide-in 1s ease-in-out 1s;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.slide-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.gap {
+  height: 20rem;
+}
+.statusSkill {
+  display: inline-flex;
+  gap: 40px;
+  transition: transform 1s ease-in-out;
 }

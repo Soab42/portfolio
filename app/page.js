@@ -12,26 +12,28 @@ import Portfolio from "@/components/Portfolio";
 import Service from "@/components/Service";
 import Testmonial from "@/components/Testmonial";
 import Skills from "@/components/Skills";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../public/assets/css/meyawo.css";
 import "./globals.css";
 
 export default function Home() {
   // Function to update scroll position
   const [scroll, setScroll] = useState(false);
-  const updateScrollPosition = () => {
-    const currentPosition = document.documentElement.scrollTop;
-    if (currentPosition >= 600) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
-  };
+  const slideInRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
   // Add scroll event listener on component mount
   useEffect(() => {
+    const updateScrollPosition = () => {
+      const currentPosition = document.documentElement.scrollTop;
+      if (currentPosition >= 600) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
     window.addEventListener("scroll", () => {
       updateScrollPosition();
-      revelsElement();
     });
     return () => {
       // Clean up the event listener on component unmount
@@ -39,7 +41,22 @@ export default function Home() {
     };
   }, []);
 
-  function revelsElement() {}
+  // console.log(isVisible);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (slideInRef.current) {
+        const rect = slideInRef.current.getBoundingClientRect();
+        // Adjust the trigger point as needed
+        const triggerPoint = window.innerHeight - rect.height / 2;
+        setIsVisible(rect.top < triggerPoint);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isVisible]);
 
   return (
     <body style={{ position: "relative" }}>
@@ -60,7 +77,7 @@ export default function Home() {
       {/* <!-- end of portfolio section --> */}
       {/* <!-- pricing section --> */}
       {/* <Pricing /> */}
-      <Skills />
+      <Skills isVisible={isVisible} slideInRef={slideInRef} />
       {/* <!-- end of pricing section --> */}
       {/* <!-- section --> */}
       <Hire />
