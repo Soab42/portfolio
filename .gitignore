@@ -9,13 +9,13 @@
 /coverage
 
 # next.js
-/.next/
-/.history/
+/.next
+/.history
 /out/
 
 # production
 /build
-
+/.vscode
 # misc
 .DS_Store
 *.pem
