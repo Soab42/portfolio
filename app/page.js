@@ -83,10 +83,10 @@ export default function Home() {
       <Hire />
       {/* <!-- end of section --> */}
       {/* <!-- testimonial section --> */}
-      <Testmonial />
+      {/* <Testmonial /> */}
       {/* <!-- end of testimonial section --> */}
       {/* <!-- blog section --> */}
-      <Blog />
+      {/* <Blog /> */}
       {/* <!-- end of blog section --> */}
       {/* <!-- contact section --> */}
       <Contact />

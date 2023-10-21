@@ -12497,9 +12497,9 @@ pre .code {
     padding: 15px 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    /* -webkit-flex-direction: column; */
+    /* -ms-flex-direction: column; */
+    /* flex-direction: column; */
   }
   .footer .social-links {
     margin-top: 15px;

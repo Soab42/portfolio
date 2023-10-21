@@ -280,7 +280,6 @@ a {
   background: rgb(47, 141, 153);
   padding: 4rem;
   height: 100vh;
-
   overflow: hidden;
 }
 .layoutMessage {
@@ -296,16 +295,18 @@ a {
   /* padding-top: 12rem; */
 }
 .messageBox {
-  background: #0071ff33;
-  width: 100%;
+  background: #0095ff70;
+  width: 50%;
   border-radius: 2rem;
+  border-top-left-radius: 0;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   box-shadow: 02px 5px 4px rgba(0, 0, 0, 0.5);
 }
 .messageBox > .name {
-  font-size: larger;
+  text-transform: capitalize;
+  font-size: x-large;
   font-weight: bold;
   padding: 2px;
   color: blanchedalmond;
@@ -314,22 +315,31 @@ a {
   position: relative;
   border-bottom: 1px solid #01050933;
   margin-bottom: 0.31rem;
-  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 5px 3px 3px rgba(11, 1, 1, 0.5);
 }
 .messageBox > .email > span {
   /* background: rgb(106, 12, 213); */
   padding: 2px;
   color: rgb(63, 74, 74);
-  margin-right: 1rem;
+  margin-right: 0.41rem;
+  text-decoration: none;
 }
 .messageBox > .email {
   font-size: large;
   font-style: italic;
   color: #403531cc;
+  /* text-decoration: underline; */
 }
 .messageBox > .message {
   font-size: large;
   /* text-indent: 20px;  */
   text-align: justify;
   padding: 1rem;
+}
+.messageBox > .time {
+  font-size: small;
+  color: #3f4222bb;
+  /* text-indent: 20px;  */
+  text-align: end;
+  padding-right: 2rem;
 }

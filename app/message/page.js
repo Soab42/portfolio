@@ -17,7 +17,7 @@ export default function Page() {
       .catch((err) => setError(err)); // Set the error in the state
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -33,10 +33,13 @@ export default function Page() {
                 <div className="messageBox" key={i}>
                   <div className="name">{singleData.name} </div>
                   <div className="email">
-                    <span>From:</span>
+                    <span>from:</span>
                     {singleData.email}
                   </div>
-                  <div className="message">{singleData.message}</div>
+                  <div className="message">
+                    &quot; {singleData.message}.&quot;
+                  </div>
+                  <div className="time">{Date(singleData.date)}</div>
                 </div>
               );
             })}

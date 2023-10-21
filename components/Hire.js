@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Hire() {
@@ -14,9 +15,12 @@ export default function Hire() {
             </p>
           </div>
           <div className="col-sm offset-sm-2 offset-md-3">
-            <button className="btn btn-lg my-font btn-light rounded">
+            <Link
+              className="btn btn-lg my-font btn-light rounded"
+              href={"#contact"}
+            >
               Hire Me
-            </button>
+            </Link>
           </div>
         </div>
         {/* <!-- end of row --> */}
