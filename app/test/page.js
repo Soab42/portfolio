@@ -2,7 +2,7 @@
 "use client";
 // SlideInComponent.js
 import React, { useRef, useEffect, useState } from "react";
-import "../../css/slide.css";
+
 import Skills from "@/components/Skills";
 const SlideInComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
