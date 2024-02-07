@@ -43,21 +43,19 @@ export default function Home() {
 
   // console.log(isVisible);
   useEffect(() => {
-    const handleScroll = () => {
-      if (slideInRef.current) {
-        const rect = slideInRef.current.getBoundingClientRect();
-        // Adjust the trigger point as needed
-        const triggerPoint = window.innerHeight - rect.height / 2;
-        setIsVisible(rect.top < triggerPoint);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.5,
       }
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    );
+    // console.log(observer);
+    observer.observe(slideInRef.current);
+    return () => observer.unobserve(slideInRef.current);
   }, [isVisible]);
-
+  // console.log(slideInRef.current);
   return (
     <body style={{ position: "relative" }}>
       {/* <!-- Page Navbar --> */}

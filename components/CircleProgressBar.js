@@ -5,7 +5,7 @@ export default function CircleProgressBar(props) {
   const { name, skill, icon } = props.skill;
   const [status, setStatus] = useState(0);
   const [statusColor, setStatusColor] = useState("#69cddf89");
-
+  // console.log("rendering");
   useEffect(() => {
     const interval = setInterval(() => {
       if (index < skill) {

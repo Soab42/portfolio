@@ -13,8 +13,8 @@ export default function About() {
             <Image
               width={600}
               height={400}
-              src="/assets/imgs/man.png"
-              className="about-img"
+              src="/assets/imgs/saif/saif-9.png"
+              className="about-img avatar"
               alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
             />
           </div>
@@ -44,7 +44,7 @@ export default function About() {
               </span>
             </div>
             <Link
-              href="assets/pdf/soab_Mahmud_Syfuddhin.pdf"
+              href="https://drive.usercontent.google.com/download?id=1suynFRHdowQezH-fJTO_r-PSBdl05uH3&export=download&authuser=0"
               className="btn-rounded btn btn-outline-primary mt-4"
             >
               Download CV

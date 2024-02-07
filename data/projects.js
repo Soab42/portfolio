@@ -43,7 +43,7 @@ export const projects = [
   },
   {
     imgLink: "/assets/imgs/cashcounter.png",
-    link: "#",
+    link: "https://drive.usercontent.google.com/download?id=10q79dGic2hnlZ9csZRvpKRg_NMQk6U2R&export=download&authuser=0&confirm=t&uuid=2a152144-dad4-47d4-bfea-1caf0bc98009&at=APZUnTXx2nVhWlgsUzZEYvwiGUk6%3A1707279716981",
     title: "Cash Counter",
     category: "Flutter Android App Development",
     github: "https://github.com/Soab42/CashCounter-Flutter",
@@ -57,7 +57,7 @@ export const projects = [
   },
   {
     imgLink: "/assets/imgs/loancalc-native-mokup-2.png",
-    link: "#",
+    link: "https://drive.usercontent.google.com/download?id=1S7Ao1TtXQ7gtvEOJwxfdGxGSAgdJEFwJ&export=download&authuser=0&confirm=t&uuid=6684c790-1354-41cd-84f4-648d26a67d06&at=APZUnTXsWG_Zz4xkSZbhltyJYEJ8%3A1707279769391",
     title: "Loan Calculator Android App",
     category: "React Native Android App Development",
     github: "https://github.com/Soab42/nativloancalc",
