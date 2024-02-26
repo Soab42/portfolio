@@ -19,8 +19,6 @@ import "./globals.css";
 export default function Home() {
   // Function to update scroll position
   const [scroll, setScroll] = useState(false);
-  const slideInRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
 
   // Add scroll event listener on component mount
   useEffect(() => {
@@ -41,20 +39,6 @@ export default function Home() {
     };
   }, []);
 
-  // console.log(isVisible);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-    // console.log(observer);
-    observer.observe(slideInRef.current);
-    return () => observer.unobserve(slideInRef.current);
-  }, [isVisible]);
   // console.log(slideInRef.current);
   return (
     <body style={{ position: "relative" }}>
@@ -75,7 +59,7 @@ export default function Home() {
       {/* <!-- end of portfolio section --> */}
       {/* <!-- pricing section --> */}
       {/* <Pricing /> */}
-      <Skills isVisible={isVisible} slideInRef={slideInRef} />
+      <Skills />
       {/* <!-- end of pricing section --> */}
       {/* <!-- section --> */}
       <Hire />

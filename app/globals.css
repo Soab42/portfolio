@@ -162,9 +162,16 @@ a {
 .portion-circle {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.6em;
+  gap: 2.5em;
+  margin: auto 0;
   filter: drop-shadow(2px 2px 0px rgba(0, 5, 9, 0.559));
 }
+@media screen and (max-width: 967px) {
+  .portion-circle {
+    gap: 1em;
+  }
+}
+
 .portion {
   width: 150px;
   height: 150px;

@@ -1,8 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function About() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  // console.log(isVisible);
+  const slideInRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+        entry.isIntersecting && observer.unobserve(slideInRef.current);
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+    // console.log(observer);
+    observer.observe(slideInRef.current);
+
+    return () => observer.unobserve(slideInRef.current);
+  }, [isVisible]);
+  // console.log(isVisible);
   return (
     <section className="section pt-5 bg-white" id="about">
       {/* <!-- container --> */}
@@ -13,8 +33,9 @@ export default function About() {
             <Image
               width={600}
               height={400}
+              ref={slideInRef}
               src="/assets/imgs/saif/saif-9.png"
-              className="about-img avatar"
+              className={`about-img ${isVisible ? "avatar" : ""}`}
               alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
             />
           </div>

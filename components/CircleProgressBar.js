@@ -1,15 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function CircleProgressBar(props) {
   const [index, setIndex] = useState(0);
   const { name, skill, icon } = props.skill;
   const [status, setStatus] = useState(0);
   const [statusColor, setStatusColor] = useState("#69cddf89");
-  // console.log("rendering");
+  const [isVisible, setIsVisible] = useState();
+  const slideInRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+        entry.isIntersecting && observer.unobserve(slideInRef.current);
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    // console.log(observer);
+    observer.observe(slideInRef.current);
+
+    return () => observer.unobserve(slideInRef.current);
+  }, [isVisible]);
   useEffect(() => {
     const interval = setInterval(() => {
       if (index < skill) {
-        props.isVisible && setIndex((prevIndex) => prevIndex + 1);
+        isVisible && setIndex((prevIndex) => prevIndex + 1);
       } else {
         clearInterval(interval);
       }
@@ -18,7 +35,7 @@ export default function CircleProgressBar(props) {
     return () => {
       clearInterval(interval);
     };
-  }, [index, skill, props.isVisible]);
+  }, [index, skill, isVisible]);
 
   useEffect(() => {
     if (index < 65) {
@@ -41,6 +58,8 @@ export default function CircleProgressBar(props) {
         flexDirection: "column",
         transition: "all .5s",
       }}
+      className={isVisible ? "avatar" : ""}
+      ref={slideInRef}
     >
       <div
         className="portion"
