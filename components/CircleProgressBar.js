@@ -58,7 +58,6 @@ export default function CircleProgressBar(props) {
         flexDirection: "column",
         transition: "all .5s",
       }}
-      className={isVisible ? "avatar" : ""}
       ref={slideInRef}
     >
       <div
