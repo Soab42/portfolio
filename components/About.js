@@ -65,7 +65,7 @@ export default function About() {
               </span>
             </div>
             <Link
-              href="https://drive.google.com/file/d/1ZUGYniVY1bxIyqbIiNKJMgCsO0q1IA0D/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/1ZslBLg90a-m8SYdq24ch68PvvuNPtpx_/view?usp=drivesdk"
               className="btn-rounded btn btn-outline-primary mt-4"
             >
               Download CV
