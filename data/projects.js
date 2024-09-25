@@ -13,7 +13,7 @@ export const projects = [
     ],
   },{
     imgLink: "/assets/imgs/dm-accounting (3).png",
-    link: "https://dmtechnology.vercel.app/login?email-test@pmk-bd.org&password-test@123",
+    link: "https://dmtechnology.vercel.app/login?email=test@pmk-bd.org&password=test@123",
     title: "Accounting System",
     category: "Nextjs and Mongodb with Authjs",
     github: "https://github.com/Soab42/dmtechnology",
