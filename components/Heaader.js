@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from "react";
 
 export default function Heaader() {
@@ -40,4 +40,4 @@ export default function Heaader() {
     </header>
   );
 }
->>>>>>> 41aacb10138a7bc96d479eebc451410c1dd06ab7
+
