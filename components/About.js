@@ -65,6 +65,7 @@ export default function About() {
               </span>
             </div>
             <Link
+              target="_blank"
               href="https://drive.google.com/file/d/1jVZdJy22BbICLBYuHTLoa67ehrGmotHH/view?usp=sharing"
               className="btn-rounded btn btn-outline-primary mt-4"
             >
